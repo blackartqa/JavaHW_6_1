@@ -18,12 +18,12 @@ class StatsServiceTest {
 
     @org.junit.jupiter.api.Test
         //проверяем соответствие средней выручки в месяц
-    void shouldMeanSales() {
+    void shouldAverageSales() {
         StatsService service = new StatsService();
 
         int[] salesByMonths = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.calculateMeanSales(salesByMonths);
+        int actual = service.calculateAverageSales(salesByMonths);
         assertEquals(expected, actual);
 
 
