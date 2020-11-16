@@ -20,12 +20,12 @@ public class StatsService {
 
     //3. метод для рассчёта месяца с максимальными продажами
     public int calculateMaxMonthSales(int[] salesByMonths) {
-        int maxMontlySales = salesByMonths[1];
+        int maxMonthlySales = salesByMonths[1];
         int maxMonthNumber = 0;
         int monthNumber = 1;
         for (int monthlySales : salesByMonths) {
-            if (monthlySales >= maxMontlySales) {
-                maxMontlySales = monthlySales;
+            if (monthlySales >= maxMonthlySales) {
+                maxMonthlySales = monthlySales;
                 maxMonthNumber = monthNumber;
             }
             monthNumber++;
@@ -35,12 +35,12 @@ public class StatsService {
 
     //4. метод для рассчёта месяца с минимальными продажами
     public int calculateMinMonthSales(int[] salesByMonths) {
-        int minMontlySales = salesByMonths[1];
+        int minMonthlySales = salesByMonths[1];
         int minMonthNumber = 0;
         int monthNumber = 1;
         for (int monthlySales : salesByMonths) {
-            if (monthlySales <= minMontlySales) {
-                minMontlySales = monthlySales;
+            if (monthlySales <= minMonthlySales) {
+                minMonthlySales = monthlySales;
                 minMonthNumber = monthNumber;
             }
             monthNumber++;
@@ -48,29 +48,28 @@ public class StatsService {
         return minMonthNumber;
     }
 
-    //5. метод для поиска месяца с продажами выше среднего
+    //5. метод для поиска количества месяцев с продажами выше среднего
     public int calculateOverAverageSales(int[] salesByMonths) {
         int monthNumberOverAverege = 0;
-        int monthNumber = 1;
         for (int monthlySales : salesByMonths) {
             if (monthlySales > calculateAverageSales(salesByMonths)) {
-                monthNumberOverAverege = monthNumber;
+                monthNumberOverAverege++;
             }
-            monthNumber++;
+
         }
 
         return monthNumberOverAverege;
     }
 
-    //5. метод для поиска месяца с продажами выше среднего
+    //6. метод для поиска количества месяцев с продажами ниже среднего
     public int calculateUnderAverageSales(int[] salesByMonths) {
         int monthNumberUnderAverege = 0;
-        int monthNumber = 1;
+
         for (int monthlySales : salesByMonths) {
             if (monthlySales < calculateAverageSales(salesByMonths)) {
-                monthNumberUnderAverege = monthNumber;
+                monthNumberUnderAverege++;
             }
-            monthNumber++;
+
         }
 
         return monthNumberUnderAverege;
